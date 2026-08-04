@@ -59,17 +59,24 @@
   li { padding-left: 1.2em; text-indent: -1.2em; }
   li::before { content: "🦞"; margin-right: .35em; font-size: .8em; }
 
-  .links { display: flex; flex-wrap: wrap; gap: 12px; }
-  .btn {
-    display: inline-block; padding: 12px 26px; border-radius: 999px;
-    background: var(--accent); color: #fff; text-decoration: none; font-weight: 700;
-    letter-spacing: .05em; transition: opacity .15s;
+  .links { display: flex; flex-wrap: wrap; gap: 14px; }
+  .linkcard {
+    display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--ink);
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 12px 18px 12px 12px; min-width: 240px; transition: border-color .15s;
   }
-  .btn:hover { opacity: .85; }
-  .btn.ghost { background: transparent; border: 1px solid var(--accent); color: var(--accent-soft); }
-
-  .disclaimer { font-size: .82rem; color: var(--ink-dim); }
-  .disclaimer li::before { content: "※"; }
+  .linkcard:hover { border-color: var(--accent-soft); }
+  .linkcard img, .linkcard .noimg {
+    width: 64px; height: 64px; border-radius: 10px; object-fit: cover; flex-shrink: 0;
+  }
+  .linkcard .noimg {
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,.06); border: 1px dashed var(--line);
+    color: var(--ink-dim); font-size: .68rem;
+  }
+  .linkcard .svc { display: block; font-weight: 700; letter-spacing: .04em; }
+  .linkcard .acct { display: block; font-size: .82rem; color: var(--ink-dim); }
+  .linkcard.ghost { cursor: default; }
   footer {
     text-align: center; font-size: .78rem; color: var(--ink-dim);
     padding: 40px 0 30px; border-top: 1px solid var(--line); margin-top: 60px;
@@ -127,20 +134,20 @@
   <section>
     <h2>LINKS</h2>
     <div class="links">
-      <a class="btn" href="https://x.com/creyfish_crayer" target="_blank" rel="noopener">X (@creyfish_crayer)</a>
-      <a class="btn ghost" href="#" onclick="return false;">YouTube（準備中）</a>
-    </div>
-  </section>
-
-  <section>
-    <h2>免責事項</h2>
-    <div class="card disclaimer">
-      <ul>
-        <li>当アカウント・配信の内容は情報提供および娯楽を目的としたものであり、投資助言・売買の推奨ではありません。</li>
-        <li>言及する銘柄・数値は「私ならどうするか」の記録です。投資判断はご自身の責任でお願いします。</li>
-        <li>投資には元本割れのリスクがあります。過去のパフォーマンスは将来の成果を保証しません。</li>
-        <li>無形商材・投資ツール・有料コミュニティ等の紹介・販売は一切行っていません。それを騙る勧誘は偽物です。</li>
-      </ul>
+      <a class="linkcard" href="https://x.com/creyfish_crayer" target="_blank" rel="noopener">
+        <img src="assets/icon.png" alt="X">
+        <span>
+          <span class="svc">𝕏 X</span>
+          <span class="acct">@creyfish_crayer</span>
+        </span>
+      </a>
+      <span class="linkcard ghost">
+        <span class="noimg">no image</span>
+        <span>
+          <span class="svc">▶ YouTube</span>
+          <span class="acct">準備中</span>
+        </span>
+      </span>
     </div>
   </section>
 
