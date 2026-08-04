@@ -28,12 +28,15 @@
   /* ヘッダー */
   header { position: relative; overflow: hidden; }
   .header-img {
-    width: 100%; height: 220px; object-fit: cover; display: block;
+    width: 100%; height: auto; display: block;
     opacity: .85;
-    -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 100%);
-            mask-image: linear-gradient(180deg, #000 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, #000 65%, transparent 100%);
+            mask-image: linear-gradient(180deg, #000 65%, transparent 100%);
   }
-  .hero { text-align: center; margin-top: -70px; position: relative; }
+  .hero { text-align: center; margin-top: -200px; position: relative; }
+  @media (max-width: 760px) {
+    .hero { margin-top: -90px; }
+  }
   .hero img {
     width: 128px; height: 128px; border-radius: 50%;
     border: 3px solid var(--accent); background: var(--bg-deep);
